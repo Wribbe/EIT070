@@ -34,7 +34,7 @@
 [Wikipedia.](https://en.wikipedia.org/wiki/Sign_extension)
 
 **Answer:** The program first loads 1 into register 8 and 9 by using the instruction
-`addi` by not providing a immediate value (zero). Then it adds the values of 
+`addi` by not providing a immediate value (zero). Then it adds the values of
 register 8 and 9 and stores it in register 10, which equals 2.
 
 
@@ -49,7 +49,7 @@ register 8 and 9 and stores it in register 10, which equals 2.
         .globl start
         .ent start
 
-start:  lui  $9, 0xbf90      # Load upper half of port address
+start:  lui  $9, 0xbf90       # Load upper half of port address
                               # Lower half is filled with zeros
 repeat: lbu     $8, 0x0($9)   # Read from the input port
         nop                   # Needed after load
@@ -58,17 +58,18 @@ repeat: lbu     $8, 0x0($9)   # Read from the input port
         nop                   # Needed after branch
         addi    $8, $0, 0     # Clear the register
 
-        .end start            # Marks the end of the program
+        end start             # Marks the end of the program
 ```
 
 **Answer:**
-
 ```
 0F 00 09 bf 90
-24 08 09 00 00 
+24 08 09 00 00
 00 00 00 00 00
 28 08 09 00 00
-04 00 00 ADDRESS OF LBU INTS.
+04 00 00 ADDRESS OF LBU INST.
 00 00 00 00 00
 08 00 00 00 00
 ```
+[MIPS Encoding Reference - University Waterloo](https://www.student.cs.uwaterloo.ca/~isg/res/mips/opcodes)   
+[MIPS Instruction set - Wikipedia](https://en.wikipedia.org/wiki/MIPS_instruction_set)
