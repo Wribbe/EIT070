@@ -49,7 +49,7 @@ register 8 and 9 and stores it in register 10, which equals 2.
         .globl start
         .ent start
 
-start:  ilui  $9, 0xbf90      # Load upper half of port address
+start:  lui  $9, 0xbf90      # Load upper half of port address
                               # Lower half is filled with zeros
 repeat: lbu     $8, 0x0($9)   # Read from the input port
         nop                   # Needed after load
@@ -59,4 +59,16 @@ repeat: lbu     $8, 0x0($9)   # Read from the input port
         addi    $8, $0, 0     # Clear the register
 
         .end start            # Marks the end of the program
+```
+
+**Answer:**
+
+```
+0F 00 09 bf 90
+24 08 09 00 00 
+00 00 00 00 00
+28 08 09 00 00
+04 00 00 ADDRESS OF LBU INTS.
+00 00 00 00 00
+08 00 00 00 00
 ```
