@@ -63,13 +63,13 @@ repeat: lbu     $8, 0x0($9)   # Read from the input port
 
 **Answer:**
 ```
-0F 00 09 bf 90
-24 08 09 00 00
-00 00 00 00 00
-28 08 09 00 00
-04 00 00 ADDRESS OF LBU INST.
-00 00 00 00 00
-08 00 00 00 00
-```
-[MIPS Encoding Reference - University Waterloo](https://www.student.cs.uwaterloo.ca/~isg/res/mips/opcodes)   
-[MIPS Instruction set - Wikipedia](https://en.wikipedia.org/wiki/MIPS_instruction_set)
+0F 00 09 bf 90                 - lui $t,C
+24 09 08 00 00                 - lbu $t,C($s)
+00 00 00 00 00                 - nop
+28 09 08 00 00                 - sb $t,C($s)
+04 00 00 ADDRESS OF LBU INST.  - beq $s,$t,C
+00 00 00 00 00                 - nop
+08 00 08 00 00                 - addi $t,$s,C
+```                            
+[MIPS Encoding Reference - Univ ersity Waterloo](https://www.student.cs.uwaterloo.ca/~isg/res/mips/opcodes)
+[MIPS Instruction set - Wikiped#ia](https://en.wikipedia.org/wiki/MIPS_instruction_set)
