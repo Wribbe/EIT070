@@ -70,6 +70,6 @@ repeat: lbu     $8, 0x0($9)   # Read from the input port
 04 00 00 ADDRESS OF LBU INST.  - beq $s,$t,C
 00 00 00 00 00                 - nop
 08 00 08 00 00                 - addi $t,$s,C
-```                            
+```
 [MIPS Encoding Reference - Univ ersity Waterloo](https://www.student.cs.uwaterloo.ca/~isg/res/mips/opcodes)
 [MIPS Instruction set - Wikiped#ia](https://en.wikipedia.org/wiki/MIPS_instruction_set)
