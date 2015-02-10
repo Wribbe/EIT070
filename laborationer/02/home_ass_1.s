@@ -12,6 +12,6 @@ wait:
 	nop
 
 	pressed:
-		lw r2, (r1)			# update button value.
-		beq r2, r4, pressed # branch if button is down.
+		lw r2, (r1)		# update button value.
+		beq r2, r4, pressed 	# branch if button is down.
 		nop
