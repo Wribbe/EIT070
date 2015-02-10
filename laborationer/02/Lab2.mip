@@ -1,0 +1,13 @@
+Lab2
+C:\Users\Steff\MipsIt98\Projects\Lab2\
+Objects\
+0
+1
+minic
+0
+0
+0
+0
+1
+objcopy.exe -O srec Lab2.out Lab2.srec
+80020000 start
