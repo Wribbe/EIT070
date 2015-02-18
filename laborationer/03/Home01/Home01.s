@@ -23,6 +23,7 @@ TextA:  .asciiz "Lab 3, Home Assigment 1\n"
 TextB:  .asciiz "The max is %d\n"
 TextC:  .asciiz "Done\n"
 TextD:	.asciiz "The current value in Test is %d.\n"
+TextE:	.asciiz "Swapped %d as new Max.\n"
 
         .text
         .align 2
@@ -38,17 +39,29 @@ FindMax:
         
         
         la 		s0, Test
-        li		r23, 9
+        li      s1, 0
+        li		t0, 9
+        move 	r23, ra		# Save ra in register 23.
         
         loop:
-        subu r23, r23, 1
+        subu t0, t0, 1
         	addu s0, s0, 4
         	la a0, TextD
-        	lw a1, 0(s0)
+        	lw t1, 0(s0)
+        	add a1, t1, 0 
         	jal printf
-        bne r23, zero, loop
+        	bgt t1, s0, swapMax
+        	nop
+        bne t0, zero, loop
         nop
-                
+        
+        move ra, r23		# Resoter ra from register 23.
+        
+        swapMax:
+       	move s1,t1
+       	bne t0, zero, loop
+       	nop
+               
         ###
 
         lw      s1, 4(sp)   # Restore old value of s1
