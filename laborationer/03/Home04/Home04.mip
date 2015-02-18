@@ -1,0 +1,19 @@
+Home04
+H:\EIT070\laborationer\03\Home04\
+Objects\
+2
+H:\EIT070\laborationer\03\Home04\Home04.s
+0
+0
+H:\EIT070\laborationer\03\Home04\interrupt.s
+0
+0
+1
+minic
+0
+0
+0
+0
+1
+objcopy.exe -O srec Home04.out Home04.srec
+80020000 start
