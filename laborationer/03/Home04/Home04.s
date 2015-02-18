@@ -9,11 +9,18 @@
 #define LEDS     0xbf900000
 #define BUTTONS  0xbfa00000
 
+		.data
+		
+		TextA: .asciiz "This is the interrupt!\n"
+
+		.text
         .globl start
         .ent start
 
 start:  sub     sp, sp, 4       # Reserve new stack space
         sw      ra, 0(sp)       # Save return address
+        
+
 
         jal     init_ext_int    # Initialize interrupts
         la      a0, IntHand     # Install our own interrupt routine
@@ -34,6 +41,15 @@ Loop:   jal     Comp            # Perform heavy computations
         .ent IntHand
 IntHand:
         ### Add code for interrupt handler here! ###
+
+	#	move r23, ra
+		la a0, TextA
+		jal printf  
+		mfc0 	v0, C0_CAUSE
+		andi r23, v0, EXT_INT3
+		nop
+		
+	#	move ra, r23
 
         .end IntHand
 
