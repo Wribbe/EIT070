@@ -1,0 +1,16 @@
+Home02
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\03\Home02\
+Objects\
+1
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\03\Home02\Home02.s
+0
+0
+1
+minic
+0
+0
+0
+0
+1
+objcopy.exe -O srec Home02.out Home02.srec
+80020000 start
