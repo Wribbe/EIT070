@@ -38,38 +38,38 @@ FindMax:
         ### Add code to find maximum value element here! ###
         
         
-        la 		s0, Test
-        li      s1, 0
-        li		t0, 9
-        move 	r23, ra		# Save ra in register 23.
+        la 		s0, Test	# Load address of Test[0] int s0.
+        li      s1, 0		# s1 stores current maxValue, intialize it to 0.
+        li		t0, 10		# t0 is the counter used to traverse the Test array, set to 10.
+        move 	r23, ra		# Save ra in register 23, the jal printf call will mangle the old one.
         
         loop:
-        subu t0, t0, 1
-        	addu s0, s0, 4
-        	la a0, TextD
-        	lw t1, 0(s0)
-        	add a1, t1, 0 
-        	jal printf
-        	bgt t1, s1, swapMax
+        subu t0, t0, 1			# Subtract 1 from the t0 counter.
+        	la a0, TextD		# Load format string for printing current value output.
+        	lw t1, 0(s0)		# Load current Test[i] to register t1.
+        	add a1, t1, 0 		# Copy the value in t1 to a1 for printing.
+        	jal printf			# Print the current value of Test[i].
+        	addu s0, s0, 4		# Advance the s0 pointer to the next Array element, Test[current+4].
+        	bgt t1, s1, swapMax # Swap t1 --> s1 if t1 > s1.
         	nop
-        bne t0, zero, loop
+        bne t0, zero, loop		# Continue loop while t0 != 0.
         nop
-        j continue
+        j continue				# Skip swapMax and head straight to continue.
         nop
                 
         swapMax:
-        move t3, s1
-       	move s1,t1
-       	move a1, s1
-       	move a2, t3
-       	la a0, TextE
-       	jal printf
-        j loop
+        move t3, s1		# Save old s1 value to t3.
+       	move s1,t1		# Replace current maxValue with new maxValue.		
+       	move a1, s1		# Load current maxValue at s1 as first parameter for printing.
+       	move a2, t3		# Load previous maxValue at t3 as second parameter for printing.
+       	la a0, TextE	# Load format string for printing.
+       	jal printf		# Print which values are swapped.
+        j loop			# Return to the loop.
         nop
 		
 		continue:
-		move v0, s1
-        move ra, r23		# Resoter ra from register 23.
+		move v0, s1		# The main program prints from v0, move current maxValue from s1 to v0.
+        move ra, r23	# Resoter ra from register 23.
         ###
 
         lw      s1, 4(sp)   # Restore old value of s1
