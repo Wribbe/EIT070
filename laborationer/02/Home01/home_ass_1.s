@@ -8,8 +8,8 @@
 
 start:  
 		li r24, 0xbfa00000
-		li r25, 0x10000000 			# value for button up.
-		li r26, 0x11000000 			# value for button down.
+		li r25, 0x10000000 	# value for button up.
+		li r26, 0x11000000 	# value for button down.
 
         jal     fix
         nop
@@ -30,14 +30,14 @@ start:
         ### Add code for wait subroutine here! ###
         
 wait:
-		lw r27, (r24) 			# update button value.
-		beq r27, r25, wait 		# branch if button is up.
+		lw r27, (r24) 		# update button value.
+		beq r27, r25, wait 	# branch if button is up.
 		nop
 		beq r27, zero, wait 	# branch if button never been pressed.	
 		nop
 
 		pressed:
-		lw r27, (r24)			# update button value.
+		lw r27, (r24)		# update button value.
 		beq r27, r26, pressed 	# branch if button is down.
 		nop
 

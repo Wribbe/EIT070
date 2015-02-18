@@ -1,0 +1,16 @@
+Test
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\02\Test\
+Objects\
+1
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\02\Test\test.s
+0
+0
+1
+minic
+0
+0
+0
+0
+1
+objcopy.exe -O srec Test.out Test.srec
+80020000 start

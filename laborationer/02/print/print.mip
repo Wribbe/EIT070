@@ -1,0 +1,26 @@
+print
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\02\print\
+Objects\
+1
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\02\print\print.s
+0
+0
+6
+kil
+c
+m
+lnk
+gcc
+soft-float
+2
+msoft-float
+nostdinc
+2
+N
+nostdlib
+1
+crt0.o
+0
+1
+objcopy.exe -O srec print.out print.srec
+80020000 start

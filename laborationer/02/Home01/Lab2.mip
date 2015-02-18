@@ -1,0 +1,19 @@
+Lab2
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\02\Home01\
+Objects\
+2
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\02\Home01\fix.s
+0
+0
+C:\Users\Steff\Documents\Skola\EIT070\laborationer\02\Home01\home_ass_1.s
+0
+0
+1
+minic
+0
+0
+0
+0
+1
+objcopy.exe -O srec Lab2.out Lab2.srec
+80020000 start
