@@ -1,0 +1,212 @@
+61:
+
+  personal
+  kursmoment
+  laborationer
+  tentamen
+  litteratur
+  upplägg
+  datorer
+  marknad för processorer
+  datorns delar
+  output device
+  input device
+  datorns insida
+  minne processorn
+  ic tillverkning
+  intel
+  moores lag - trender
+  dator
+  användarprogram, OS och hårdvara
+  program
+  ALU - arithmetic logic unit
+  register
+  sekventiell logik
+  register och primärminne
+  variabler och minne
+  minne
+  byte eller wordadresserat minne
+  hur sätts byte ihop till word?
+  kontrollenhet
+  exekvering av en instruktion
+  kontrollenhet
+  cpu tid
+  execkveringstid
+  prestanda
+
+62:
+
+  program
+  exekvering av en instruktion
+  kontrollenhet
+  exekveringstid
+  prestanda
+  markininstruktioner
+  aritmetiska operationer
+  adressering
+  varför olika sätt att adressera?
+  adressering: avvägningar
+  hoppinstruktioner
+  hoppinstruktion
+    ovilkkorliga hopp
+    villkorliga hopp
+  subrutiner och funktioner
+  stack
+  stack för subrutiner och funktioner
+  register för subrutiner och funktioner
+  återhopp och parameteröverföring
+  in- och utmatning
+  minnessmappad och isolerad I/O
+  exempel på minnesmappad I/O
+  maskininstruktione
+  instruktionsformat
+  antal addresser i instruktion
+  semantiskt glapp
+  utvärdering av applikationsprogram
+  RSIC - Reduced Instruction Set Computers
+  CISC - Complex Instruction Set Computers
+
+63:
+
+  program
+  semantiskt gap
+  datatyper
+  tilldelningssatser
+  aritmetiska operationer
+  beräkningar
+  bithantering
+  villkor
+  villkorsuttryck
+  loopar
+  funktioner
+  pekare
+  pekare till funktioner
+  variablers synlighet
+  include
+  dator
+  OS - inledning
+  Unix
+  Linux
+  vad gör ett OS?
+  program
+  hur går det till att byta program?
+  kontextbyte
+  processkontrollblock
+  processhantering
+  process modell
+  schemaläggare
+  minneshantering
+  hantera hårdvaruresurser
+  systemanrop
+  polling/avbrott
+  filsystem
+
+64:
+
+  filsystem - inode
+  minnets komponenter
+  programexekvering
+  minnet från processorns sida
+  minneshantering
+  minnet
+    primärminne
+    sekundärminne
+  design av minnessystem
+  minneshirarki
+  cacheminne
+  utnyttja lokalitet
+  ersättningsalgoritmer
+  skrivstrategier
+  prestanda
+  prestanda - multilevel cache
+  paging
+  inode
+  demand paging
+  virtuellt minne
+  translation look-aside buffer
+
+65:
+
+  design av minnen
+  minneshirarki
+  cacheminne
+    direktmapping
+    associativemapping
+    2-vägs set associative
+  jämför cacheminnen
+  ersättningsalgoritmer
+  skrivstrategier
+  antal cachenivåer
+  separat instruktion/data cache
+  prestanda
+  prestanda - multilevel cache
+  cache coherency
+  cache coherency - problem
+  minnets komponenter
+  minnets innehåll över tiden
+  paging
+  filsystem - Inode
+  paging
+  demand paging
+  virtuellt minne
+  translation Look-Aside buffer (TLB)
+
+66:
+
+  Närliggande allokering
+  paging
+  Demand paging
+  virtuellt minne
+  programexekvering
+  fetch execute
+  pipelining
+  kontrollenhet utan pipeklne
+  närliggande allokering
+  Paging
+  Demand paging
+  Virtuellt minne
+  programexekvering
+  fetch-execute
+  pipelining
+  strukturella hazards
+  data hazards
+  kontroll hazards
+  minska penalties vid hopp
+  delayed branching
+  instruction fetch unit och instruktionskö
+  branch prediction
+  speculative exeuction
+  static branch prediction
+  dynamic branch prediction
+  tvåbitas prediktering
+  branch history
+  delayed load problem
+
+67:
+
+  Fetch execute
+  Pipelining
+  Parallellberäkning
+  Klassificering av datorarkitetkturer
+    SISD
+    SIMD
+    MIMD
+  Multicore och muticomputer
+  Prestanda på parallella arkitekturer
+  Amdalhs lag
+  Superscalar architecture
+  Instruktionsfönster
+  Problem parallell exekvering
+  True data dependency
+  Output dependency
+  Anti dependency
+  Register renaming
+  Parallell exekvering
+  in-order issue with in-order completion
+  in-order issue with out-of-order completion
+  out-of-order issue with out-of-order completion
+  konflikthantering
+  VLIW
+  kontextbyte
+  processer och trådar
+  multithreading
