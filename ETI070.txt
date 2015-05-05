@@ -1,86 +1,243 @@
 61:
 
-  personal kursmoment laborationer tentamen litteratur upplägg datorer
-  marknad för processorer datorns delar output device input device datorns
-  insida minne processorn ic tillverkning intel moores lag - trender dator
-  användarprogram, OS och hårdvara program ALU - arithmetic logic unit
-  register sekventiell logik register och primärminne variabler och minne
-  minne byte eller wordadresserat minne hur sätts byte ihop till word?
-  kontrollenhet exekvering av en instruktion kontrollenhet cpu tid
-  execkveringstid prestanda [tenta E1]
+  personal
+  kursmoment
+  laborationer
+  tentamen
+  litteratur
+  upplägg
+  datorer
+  marknad för processorer
+  datorns delar
+  output device
+  input device
+  datorns insida
+  minne processorn
+  ic tillverkning
+  intel
+  moores lag - trender
+  dator
+  användarprogram, OS och hårdvara
+  program
+  ALU - arithmetic logic unit
+  register
+  sekventiell logik
+  register och primärminne
+  variabler och minne
+  minne
+  byte eller wordadresserat minne
+  hur sätts byte ihop till word?
+  kontrollenhet
+  exekvering av en instruktion
+  kontrollenhet
+  cpu tid
+  execkveringstid
+  prestanda [tenta E1]
 
 62:
 
-  program exekvering av en instruktion kontrollenhet exekveringstid prestanda
-  markininstruktioner aritmetiska operationer adressering varför olika sätt
-  att adressera? [tenta E4] adressering: avvägningar hoppinstruktioner
-  hoppinstruktion ovilkkorliga hopp villkorliga hopp subrutiner och
-  funktioner stack stack för subrutiner och funktioner register för
-  subrutiner och funktioner återhopp och parameteröverföring in- och
-  utmatning minnessmappad och isolerad I/O exempel på minnesmappad I/O
-  maskininstruktione instruktionsformat antal addresser i instruktion
-  semantiskt glapp utvärdering av applikationsprogram RSIC - Reduced
-  Instruction Set Computers CISC - Complex Instruction Set Computers
+  program
+  exekvering av en instruktion
+  kontrollenhet
+  exekveringstid
+  prestanda
+  markininstruktioner
+  aritmetiska operationer
+  adressering
+  varför olika sätt att adressera? [tenta E4]
+  adressering: avvägningar
+  hoppinstruktioner
+  hoppinstruktion
+    ovilkkorliga hopp
+    villkorliga hopp
+  subrutiner och funktioner
+  stack
+  stack för subrutiner och funktioner
+  register för subrutiner och funktioner
+  återhopp och parameteröverföring
+  in- och utmatning
+  minnessmappad och isolerad I/O
+  exempel på minnesmappad I/O
+  maskininstruktione
+  instruktionsformat
+  antal addresser i instruktion
+  semantiskt glapp
+  utvärdering av applikationsprogram
+  RSIC - Reduced Instruction Set Computers
+  CISC - Complex Instruction Set Computers
 
 63:
 
-  program semantiskt gap datatyper [tenta E2] tilldelningssatser aritmetiska
-  operationer beräkningar bithantering villkor villkorsuttryck loopar
-  funktioner pekare pekare till funktioner variablers synlighet include dator
-  OS - inledning Unix Linux vad gör ett OS?  program hur går det till att
-  byta program?  kontextbyte processkontrollblock processhantering process
-  modell schemaläggare minneshantering hantera hårdvaruresurser systemanrop
-  polling/avbrott filsystem
+  program
+  semantiskt gap
+  datatyper [tenta E2]
+  tilldelningssatser
+  aritmetiska operationer
+  beräkningar
+  bithantering
+  villkor
+  villkorsuttryck
+  loopar
+  funktioner
+  pekare
+  pekare till funktioner
+  variablers synlighet
+  include
+  dator
+  OS - inledning
+  Unix
+  Linux
+  vad gör ett OS?
+  program
+  hur går det till att byta program?
+  kontextbyte
+  processkontrollblock
+  processhantering
+  process modell
+  schemaläggare
+  minneshantering
+  hantera hårdvaruresurser
+  systemanrop
+  polling/avbrott
+  filsystem
 
 64:
 
-  filsystem - inode minnets komponenter programexekvering minnet från
-  processorns sida minneshantering minnet primärminne sekundärminne design av
-  minnessystem minneshirarki [tenta F2] cacheminne [tenta R4] [tenta E3]
-  utnyttja lokalitet ersättningsalgoritmer skrivstrategier prestanda
-  prestanda - multilevel cache paging inode demand paging virtuellt minne
+  filsystem - inode
+  minnets komponenter
+  programexekvering
+  minnet från processorns sida
+  minneshantering
+  minnet
+    primärminne
+    sekundärminne
+  design av minnessystem
+  minneshirarki [tenta F2]
+  cacheminne [tenta R4] [tenta E3]
+  utnyttja lokalitet
+  ersättningsalgoritmer
+  skrivstrategier
+  prestanda
+  prestanda - multilevel cache
+  paging
+  inode
+  demand paging
+  virtuellt minne
   translation look-aside buffer [tenta R2]
 
 65:
 
-  design av minnen minneshirarki cacheminne [tenta E3] direktmapping [tenta
-  E3] associativemapping [tenta E3] 2-vägs set associative jämför cacheminnen
-  ersättningsalgoritmer skrivstrategier antal cachenivåer separat
-  instruktion/data cache prestanda [tenta R4] prestanda - multilevel cache
-  cache coherency cache coherency - problem minnets komponenter minnets
-  innehåll över tiden paging filsystem - Inode paging demand paging virtuellt
-  minne translation Look-Aside buffer (TLB)
+  design av minnen
+  minneshirarki
+  cacheminne [tenta E3]
+    direktmapping [tenta E3]
+    associativemapping [tenta E3]
+    2-vägs set associative
+  jämför cacheminnen
+  ersättningsalgoritmer
+  skrivstrategier
+  antal cachenivåer
+  separat instruktion/data cache
+  prestanda [tenta R4]
+  prestanda - multilevel cache
+  cache coherency
+  cache coherency - problem
+  minnets komponenter
+  minnets innehåll över tiden
+  paging
+  filsystem - Inode
+  paging
+  demand paging
+  virtuellt minne
+  translation Look-Aside buffer (TLB)
 
 66:
 
-  Närliggande allokering paging Demand paging virtuellt minne
-  programexekvering fetch execute pipelining kontrollenhet utan pipeklne
-  närliggande allokering Paging Demand paging Virtuellt minne
-  programexekvering fetch-execute pipelining [tenta R4] strukturella hazards
-  [tenta R3] data hazards kontroll hazards minska penalties vid hopp delayed
-  branching [tenta E4] instruction fetch unit och instruktionskö branch
-  prediction speculative exeuction [tenta R3] static branch prediction
-  dynamic branch prediction tvåbitas prediktering branch history delayed load
-  problem
+  Närliggande allokering
+  paging
+  Demand paging
+  virtuellt minne
+  programexekvering
+  fetch execute
+  pipelining
+  kontrollenhet utan pipeklne
+  närliggande allokering
+  Paging
+  Demand paging
+  Virtuellt minne
+  programexekvering
+  fetch-execute
+  pipelining [tenta R4]
+  strukturella hazards [tenta R3]
+  data hazards
+  kontroll hazards
+  minska penalties vid hopp
+  delayed branching [tenta E4]
+  instruction fetch unit och instruktionskö
+  branch prediction
+  speculative exeuction [tenta R3]
+  static branch prediction
+  dynamic branch prediction
+  tvåbitas prediktering
+  branch history
+  delayed load problem
 
 67:
 
-  Fetch execute [tenta R1] Pipelining Parallellberäkning Klassificering av
-  datorarkitetkturer [tenta R5] SISD SIMD MIMD Multicore och muticomputer
-  Prestanda på parallella arkitekturer Amdalhs lag
+  Fetch execute [tenta R1]
+    med pipelining kan fetch och execute överlappa -> sparar tid.
 
-    Exekveringstid: T_p = f*T_s+(1-f)*T_s/p Speedup; S = T_s/T_p Efficiency:
-    E = S/p
+  Pipelining
+    6-steg:
+      Fetch Instruction - FI
+      Decode Instruction - DI
+      Calculate Operand address - CO
+      Fetch Operand - FO
+      Execute instuction - EI
+      Write operand - WO
+
+    problem (hazards):
+      strukturella / data / kontroll
+
+  Parallellberäkning
+    Sigle core CPUer för lite -> multicore / gemensamma resurs /
+    bussstruktur.
+
+  Klassificering av datorarkitetkturer [tenta R5]
+    SISD - Single-instruction-single-datastream
+      en ström inst. en ström data
+      Minne -IS-> CPU(kontrollenh. -> ber.enh) -DS-> Minne
+    SIMD - Singel-instruction-multiple-datastream
+      en ström inst. flera data
+      Minne -IS-> CPU(kontrollenh. -> (ber.enh[1,2,3..]) -DS[1,2,3]-> Minne
+    MISD
+    MIMD
+  Multicore och muticomputer
+
+  Prestanda på parallella arkitekturer
+
+    Amdalhs lag
+
+      f=exek. sekve.
+      1-f=exek. paralellt.
+
+      T_s = exekv.tid sekven.
+      T_p = exekv.tid parall.
+
+      Exekveringstid: T_p = f*T_s+(1-f)*T_s/p
+      Speedup; S = T_s/T_p
+      Efficiency: E = S/p
 
   Superscalar architecture
 
-    paralella enheter kan exek. sammtidigt, ex 2xint + 1xfloat typer: skalär:
-    heltal, flyttal.  icke-skallär: matris, vektor.
+    paralella enheter kan exek. sammtidigt, ex 2xint + 1xfloat
+    typer: skalär: heltal, flyttal.
+           icke-skallär: matris, vektor.
 
   Instruktionsfönster
 
-    De instruktioner som processen kan välja vid viss tidpunkt.  Stort ->
-    effektivt.
+    De instruktioner som processen kan välja vid viss tidpunkt.
+    Stort -> effektivt.
 
     problem
       * svårt att hämta inst. med hög hast.
@@ -94,30 +251,36 @@
 
     Datakonf.
 
-      True data dependency / data konflitk/hazard [tenta R5] En instruktion
-      måste vänt a på res. från annan inst.
+      True data dependency / data konflitk/hazard [tenta R5]
+        En instruktion måste vänt a på res. från annan inst.
 
-      Output dependency Två instruktioner skriver till samma plats, ändring i
-      ord. -> annat värde.
+      Output dependency
+        Två instruktioner skriver till samma plats, ändring i ord. ->
+        annat värde.
 
-      Anti dependency En instruktion använder ett värde som kan ändras under
-      tiden av annan instruktion.
+      Anti dependency
+        En instruktion använder ett värde som kan ändras under tiden
+        av annan instruktion.
 
-  Register renaming Använda andra register för att undvika serialliseing
+  Register renaming
+    Använda andra register för att undvika serialliseing
 
-  Parallell exekvering in-order issue / in order comple.  intruktionerna
-  kommer ut samma som in.  in-order issue / out of order comple.
-  intruktionerna kommer ut annorlunda än in.
+  Parallell exekvering
+    in-order issue / in order comple.
+      intruktionerna kommer ut samma som in.
+    in-order issue / out of order comple.
+      intruktionerna kommer ut annorlunda än in.
 
   konflikthantering
 
-    in-order issue with in-order completion bara bara hantera true data
-    dependency
+    in-order issue with in-order completion
+      bara bara hantera true data dependency
 
-    in-order issue with out-of-order completion (...)
+    in-order issue with out-of-order completion
+      (...)
 
-    out-of-order issue with out-of-order completion beh. hantera true data,
-    output och anti-dependency.
+    out-of-order issue with out-of-order completion
+      beh. hantera true data, output och anti-dependency.
 
   VLIW
 
@@ -125,13 +288,13 @@
 
   kontextbyte
 
-    A running - context switch (A -> PCBA && PCBB -> B) - B running context
-    switch (B -> PCBB  && PCBA -> A) - A running.
+    A running - context switch (A -> PCBA && PCBB -> B) - B running
+    context switch (B -> PCBB  && PCBA -> A) - A running.
 
   processer och trådar
 
-    process består av flera trådar där tråd är sekventiell kod som kan exek.
-    tillsammans med andra trådar.
+    process består av flera trådar där tråd är sekventiell kod som kan
+    exek. tillsammans med andra trådar.
 
     trådarna delar samma data och stack.
 
