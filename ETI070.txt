@@ -32,7 +32,7 @@
   kontrollenhet
   cpu tid
   execkveringstid
-  prestanda
+  prestanda [tenta E1]
 
 62:
 
@@ -44,7 +44,7 @@
   markininstruktioner
   aritmetiska operationer
   adressering
-  varför olika sätt att adressera?
+  varför olika sätt att adressera? [tenta E4]
   adressering: avvägningar
   hoppinstruktioner
   hoppinstruktion
@@ -70,7 +70,7 @@
 
   program
   semantiskt gap
-  datatyper
+  datatyper [tenta E2]
   tilldelningssatser
   aritmetiska operationer
   beräkningar
@@ -112,8 +112,8 @@
     primärminne
     sekundärminne
   design av minnessystem
-  minneshirarki
-  cacheminne
+  minneshirarki [tenta F2]
+  cacheminne [tenta R4] [tenta E3]
   utnyttja lokalitet
   ersättningsalgoritmer
   skrivstrategier
@@ -123,22 +123,22 @@
   inode
   demand paging
   virtuellt minne
-  translation look-aside buffer
+  translation look-aside buffer [tenta R2]
 
 65:
 
   design av minnen
   minneshirarki
-  cacheminne
-    direktmapping
-    associativemapping
+  cacheminne [tenta E3]
+    direktmapping [tenta E3]
+    associativemapping [tenta E3]
     2-vägs set associative
   jämför cacheminnen
   ersättningsalgoritmer
   skrivstrategier
   antal cachenivåer
   separat instruktion/data cache
-  prestanda
+  prestanda [tenta R4]
   prestanda - multilevel cache
   cache coherency
   cache coherency - problem
@@ -167,15 +167,15 @@
   Virtuellt minne
   programexekvering
   fetch-execute
-  pipelining
-  strukturella hazards
+  pipelining [tenta R4]
+  strukturella hazards [tenta R3]
   data hazards
   kontroll hazards
   minska penalties vid hopp
-  delayed branching
+  delayed branching [tenta E4]
   instruction fetch unit och instruktionskö
   branch prediction
-  speculative exeuction
+  speculative exeuction [tenta R3]
   static branch prediction
   dynamic branch prediction
   tvåbitas prediktering
@@ -184,29 +184,139 @@
 
 67:
 
-  Fetch execute
+  Fetch execute [tenta R1]
   Pipelining
   Parallellberäkning
-  Klassificering av datorarkitetkturer
+  Klassificering av datorarkitetkturer [tenta R5]
     SISD
     SIMD
     MIMD
   Multicore och muticomputer
   Prestanda på parallella arkitekturer
   Amdalhs lag
+
+    Exekveringstid: T_p = f*T_s+(1-f)*T_s/p
+    Speedup; S = T_s/T_p
+    Efficiency: E = S/p
+
   Superscalar architecture
+
+    paralella enheter kan exek. sammtidigt, ex 2xint + 1xfloat
+    typer: skalär: heltal, flyttal.
+           icke-skallär: matris, vektor.
+
   Instruktionsfönster
+
+    De instruktioner som processen kan välja vid viss tidpunkt.
+    Stort -> effektivt.
+
+    problem
+      * svårt att hämta inst. med hög hast.
+      * konf. i pipeline (branch, strukural, data)
+
   Problem parallell exekvering
-  True data dependency
-  Output dependency
-  Anti dependency
+
+    Resource konf.
+
+    Kontroll konf.
+
+    Datakonf.
+
+      True data dependency / data konflitk/hazard [tenta R5]
+        En instruktion måste vänt a på res. från annan inst.
+
+      Output dependency
+        Två instruktioner skriver till samma plats, ändring i ord. ->
+        annat värde.
+
+      Anti dependency
+        En instruktion använder ett värde som kan ändras under tiden
+        av annan instruktion.
+
   Register renaming
+    Använda andra register för att undvika serialliseing
+
   Parallell exekvering
-  in-order issue with in-order completion
-  in-order issue with out-of-order completion
-  out-of-order issue with out-of-order completion
+    in-order issue / in order comple.
+      intruktionerna kommer ut samma som in.
+    in-order issue / out of order comple.
+      intruktionerna kommer ut annorlunda än in.
+
   konflikthantering
+
+    in-order issue with in-order completion
+      bara bara hantera true data dependency
+
+    in-order issue with out-of-order completion
+      (...)
+
+    out-of-order issue with out-of-order completion
+      beh. hantera true data, output och anti-dependency.
+
   VLIW
+
+    kompilatorn hanterar detetktering av parallellism.
+
   kontextbyte
+
+    A running - context switch (A -> PCBA && PCBB -> B) - B running
+    context switch (B -> PCBB  && PCBA -> A) - A running.
+
   processer och trådar
-  multithreading
+
+    process består av flera trådar där tråd är sekventiell kod som kan
+    exek. tillsammans med andra trådar.
+
+    trådarna delar samma data och stack.
+
+    hårdvarustöd:
+      * programräknare och register per tråd.
+      * instruktionshämtning (fetch) på tråd basis.
+      * kontextbyte (byte av tråd)
+
+    multithreading scalar
+
+        större chans att kunna exek. instruktioner parallellt.
+        vid ex. blockering pga minnesacc. kan instr. från annan tråd
+        exek.
+
+        interleaved kör en instruktion från varje blocked kör klart (till
+        avbrott?) för varje process.
+
+      supercalar
+
+        Hårdvaran detekterar om det går att parallellisera.
+
+        A superscalar CPU architecture implements a form of parallelism called
+        instruction-level parallelism within a single processor. It therefore
+        allows faster CPU throughput than would otherwise be possible at a
+        given clock rate. A superscalar processor executes more than one
+        instruction during a clock cycle by simultaneously dispatching multiple
+        instructions to different functional units on the processor. Each
+        functional unit is not a separate CPU core but an execution resource
+        within a single CPU such as an arithmetic logic unit, a bit shifter, or
+        a multiplier.
+
+        In Flynn's taxonomy, a single-core superscalar processor is classified
+        as an SISD processor (Single Instruction stream, Single Data stream),
+        though many superscalar processors support short vector operations and
+        so could be classified as SIMD (Single Instruction stream, Multiple
+        Data streams).  A multi-core superscalar processor is classified as an
+        MIMD processor (Multiple Instruction streams, Multiple Data streams).
+
+        While a superscalar CPU is typically also pipelined, pipelining and
+        superscalar architecture are considered different performance
+        enhancement techniques.
+
+        The superscalar technique is traditionally associated with several
+        identifying characteristics (within a given CPU core):
+
+        Instructions are issued from a sequential instruction stream CPU
+        hardware dynamically checks for data dependencies between instructions
+        at run time (versus software checking at compile time) The CPU
+        processes multiple instructions per clock cycle
+
+        Interleaved multithreading Run a section/line on A then a section/line
+        on B etc.  Blocked multitherading Distribute a process over the
+        processor until it's done and change.  Simultaneous multitherading
+        (SMT) Run all different threads simultaneously.
