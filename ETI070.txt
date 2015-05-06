@@ -110,11 +110,27 @@
   minneshantering
   minnet
     primärminne
-    sekundärminne
+    sekundärminne (HDD)
+      lågnivå - seiktorer och tracks
+      partionering - logiska diskar
+      högnivåformatering - vilket OS ska anv.?
+      schemaläggare
+        shortest-seek time from head
+        elevator algo. - move bach and forth
+        one-way elevator - move in one direction
+      fragmentering:
+        extern - de olika "blocken" ligger med mellanrum, nytt block
+                 kanske inte får plats.
+        intern - datan fyller inte ut blocket helt, oanvända bytes
   design av minnessystem
   minneshirarki [tenta F2]
   cacheminne [tenta R4] [tenta E3]
-  utnyttja lokalitet
+    temporal lokalitet - lokalitet i tiden
+    rumslokalitet - sannor. större att närliggande addr. för nuvar. anv.
+    utnyttja lokalitet
+      lagra allt på hårddisk.
+      kopiera "recentlu accessed (and nearby) items från HDD -> prim. minne.
+      kopiera "recentlu accessed (and nearby) items från prim. minne -> cache
   ersättningsalgoritmer
   skrivstrategier
   prestanda
@@ -123,64 +139,148 @@
   inode
   demand paging
   virtuellt minne
+    nästa
   translation look-aside buffer [tenta R2]
+    nästa
 
 65:
 
   design av minnen
+    vill ha: stort minnes med samma klockf. som processorn.
+
   minneshirarki
+    cpu reg. : 8-32st (a 32 bitar -> 32-128 bytes) : få ns / 0-1 klc.
+    on chip cache (L1) : 32-128 kbyte : ~10 ns / 3 klc.
+    off chip cache (L2) : 128 kbyte - 12 Mbytes : 10tals ns / 10 klc.
+    main mem. (RAM) : 256 Mbytes - 4 Gbytes : ~100 ns / 100 klc.
+    hdd : 1 Gbyte - 1 Tbyte : 10-tals msek, 10 000 000 klc.
+
   cacheminne [tenta E3]
     direktmapping [tenta E3]
     associativemapping [tenta E3]
     2-vägs set associative
+
   jämför cacheminnen
+    direktmapping (tänk hashmap)
+    fully associativemapping (tänk lista)
+    2-vägs set-associa. (tänk hashmap med listor)
+
   ersättningsalgoritmer
+    impl. i hårdv. prest. viktigt
+    slupmässigt
+    least recently used (LRU)
+    first in first out (FIFO)
+    least freq. used (LFU)
+
+
   skrivstrategier
+    write-through: skriv direkt till cache vid uppda.
+    write-through with buffers: buffra -> skriv perio.
+    write (copy)-back: uppdatera när en cache-rad byts
+    ofta dirty bit
+
   antal cachenivåer
+    prim <-> L2 <-> L1 <-> reg (cpu)
+
   separat instruktion/data cache
+    primär <-I-> instruktioner <-I-> register (cpu)
+    primär <-D-> data <-D-> register (cpu)
+
   prestanda [tenta R4]
+    påverkas av cycler för prog.exek. (ink. cache hit tid)
+    I-cache (inst.) = I-miss * miss-penalty
+    D-cache (data.) = load-store * miss-rate * miss-penalty
+    Ta ideal hast. (CPI) addera I- o D-cache -> actual CPI
+
   prestanda - multilevel cache
+    Ef. CPI = CPI + fa(L1)*pen(L2) + miss(glob-prim)*pen(L1)
+
   cache coherency
+    flera cach-kopior av samma minne skall vara lika
+
   cache coherency - problem
-  minnets komponenter
-  minnets innehåll över tiden
-  paging
-  filsystem - Inode
-  paging
-  demand paging
+    missmatch mellan processer som delar samma adressrymd
+
   virtuellt minne
+    varje prog. får priv. addr.rymd.
+    färre ramar än sidor.
+    demand paging - långsammare ju fler sidor.
+
   translation Look-Aside buffer (TLB)
+    anv. cache för sidtabell -> snabbare än att läsa prim. minne.
 
 66:
 
   Närliggande allokering
-  paging
-  Demand paging
-  virtuellt minne
-  programexekvering
-  fetch execute
-  pipelining
-  kontrollenhet utan pipeklne
-  närliggande allokering
-  Paging
-  Demand paging
+    minnet blir fragmenterat
+
   Virtuellt minne
+    anv. prim.minne (RAM) som cache för sekund. minne (HDD).
+    antal platser = frames
+    data från program = page
+    program -dela-> pages -sätt-> tabell
+    tabell -ref-> till plats i prim.minne
+
   programexekvering
-  fetch-execute
+    fetch-execute
+      fetch: hämta instruktion
+        * hämta instr. på addr.
+        * flytta instruktion till CPU.
+        * avkoda instruktion.
+      execute: kör instruktionen
+        * utf inst. - hämta data på addr.
+        * utf inst. - spara data på addr2.
+
   pipelining [tenta R4]
+    köra inst. i typ parallell.
+    FI / DI / CO / FO / EI / WO
+
   strukturella hazards [tenta R3]
+    2st inst. vill acc. samma resurser ex. läsa minne.
+    minska med mer res. ex. sep. data- o inst-cache.
+
   data hazards
+    inst. I2 ber. av I1. utan pipel. I1 färdig före I2.
+    med pipel. ej säkert. I2 kan bli klar innan I1 så I2 mst. vänta
+    -> data hazard.
+
+    kan minska med forward/bypass ALUn -> MUX.
+
   kontroll hazards
+    kontroll hazard uppkommer på grund av hopp/branch inst.
+
   minska penalties vid hopp
+    hopp påv. pipeline pres.
+
   delayed branching [tenta E4]
+    flyttar inst. till branch delay slot. Exekv. innan branch.
+
   instruction fetch unit och instruktionskö
+    flesta proc. har fetch units som hämtar inst. innan de behövs.
+    lagras i inst-kö. Kan känna igen hopp och gen. hoppadr.
+
   branch prediction
+    gissa taken/not taken.
+    gissar o hämtar inst
+      a) rätt -> forst.
+      b) fel -> hämta rätt inst.
+
   speculative exeuction [tenta R3]
-  static branch prediction
-  dynamic branch prediction
-  tvåbitas prediktering
-  branch history
+    exek. inst. innan processorn vet om det är rätt.
+    static branch prediction
+      ingen hist. ex, hoppet tar aldrig/alltid/ber. riktning (fram/bak).
+    dynamic branch prediction
+      anv. historik. en bit, dvs, spara förra, gör samma.
+    tvåbitas prediktering
+      gissning bas. på senaste 2 fallen.
+    branch history
+      används för att lagra res. och vart ett hopp går anv. för gissning.
+
   delayed load problem
+    det som loadas blir inte tillängligt förrens nästa klockcykel
+    -> res. i NOP.
+    delayed load: exekvera alltid inst. efter load, se till att var i
+    load inte anv. dir. ef. load.
 
 67:
 
