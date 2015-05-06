@@ -92,14 +92,33 @@
   hur går det till att byta program?
   kontextbyte
   processkontrollblock
+    datastruktur inneh. inf. som beh. för att kunna hantera givet prog.
+      innh. typiskt: PID,reg.värden,PC.,stackp.
   processhantering
   process modell
   schemaläggare
   minneshantering
+    relocation
+    memory protection
+    sharing
   hantera hårdvaruresurser
   systemanrop
+    avbrott genereras av klocka (HW.)
+    avbrott gen. av systemanrop (SW.)
+
   polling/avbrott
-  filsystem
+    polling - konti. avl. av input
+    avbrott - proc. gör annat fram till avb.
+  filsystem (inode)
+    12x direct pointers
+  vad gör ett OS?
+    processhantering
+    minneshantering
+    filsystem
+    drivrutiner
+    nätvärk
+    säkerhet
+    I/O
 
 64:
 
